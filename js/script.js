@@ -69,7 +69,7 @@ const app = new Vue({
     ],
    },
    {
-    name: "Luisa",
+    name: "Alessandro",
     avatar: "_4",
     visible: true,
     messages: [
@@ -86,5 +86,12 @@ const app = new Vue({
     ],
    },
   ],
+  indexCurrentContact: 0,
+ },
+ methods: {
+  chanceContact(index) {
+   this.indexCurrentContact = index;
+   this.resetMessageInfo();
+  },
  },
 });

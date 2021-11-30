@@ -16,7 +16,48 @@
 </head>
 
 <body>
-    <div id="root">
+    <div id="root" class="app-container">
+        <div class="col-left">
+            <div class="user">
+                <div class="left-side">
+                    <img id="user-1" src="img/avatar_1.jpg" alt="">
+                    <p id="user-name">Nome Utente</p>
+                </div>
+
+                <div class="icons">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+            <div class="message-notifications">
+                <i class="far fa-bell-slash"></i>
+                <div class="notifiche">
+                    <p>Ricevi notifiche di nuovi messaggi</p>
+                    <p>Attiva notifiche desktop</p>
+                </div>
+            </div>
+            <div class="search-contact">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Cerca o inizia una nuova">
+            </div>
+            <ul class="contacts">
+                <li v-for="(contact, index) in contacts" :key="index"
+                    :class="index == indexCurrentContact ? 'active' : null" @click="chanceContact(index)">
+                    <div class="contact-avatar">
+                        <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
+                    </div>
+                    <div class="contact-name">
+                        {{contact.name}}
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
+
+        <div class=" col-right">
+        </div>
 
     </div>
 

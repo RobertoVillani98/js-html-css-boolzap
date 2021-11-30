@@ -6,4 +6,144 @@
 
 body {
  font-family: "Lato", sans-serif;
+ height: 100vh;
+ background: linear-gradient(to bottom, #009688 0% 15%, #d8dbd5 15% 100%);
+ padding: 30px;
+}
+
+.app-container {
+ width: 80%;
+ height: 100%;
+ margin: 0 auto;
+ background-color: white;
+ display: flex;
+}
+
+.col-left,
+.col-right {
+ height: 100%;
+}
+
+.col-left {
+ width: 30%;
+}
+
+.col-right {
+ width: 70%;
+ background-color: tomato;
+}
+
+.user {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ height: 60px;
+ background-color: #eaeaea;
+}
+
+#user-1 {
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ margin-left: 5px;
+}
+
+.left-side {
+ display: flex;
+ align-items: center;
+}
+
+.icons {
+ display: flex;
+ justify-content: flex-end;
+ gap: 15px;
+ margin-right: 15px;
+ color: #b1b1b1;
+}
+
+#user-name {
+ margin-left: 5px;
+ font-size: 14px;
+}
+
+.message-notifications {
+ display: flex;
+ align-items: center;
+ height: 60px;
+ background-color: #8edafc;
+}
+
+.message-notifications i {
+ font-size: 20px;
+ background-color: white;
+ border-radius: 50%;
+ padding: 10px;
+ color: #8edafc;
+ margin-left: 20px;
+ margin-right: 10px;
+}
+
+.notifiche :last-child {
+ font-size: 12px;
+ text-decoration: underline;
+ color: #646363;
+}
+
+.notifiche :first-child {
+ font-size: 14px;
+}
+
+.search-contact {
+ height: 40px;
+ display: flex;
+ padding: 5px;
+}
+
+.search-contact i {
+ padding: 3px;
+ width: 20%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background-color: white;
+ color: #b1b1b1;
+}
+
+input {
+ padding: 3px;
+ width: 80%;
+ border: none;
+}
+
+.contacts {
+ height: calc(100% - 165px);
+}
+
+.contacts li {
+ padding: 10px 20px;
+ display: flex;
+ border-bottom: 1px solid lightgray;
+}
+
+.contacts li.active {
+ background-color: #e9ebeb;
+}
+
+.contacts :last-child {
+ border-bottom: none;
+}
+
+.contact-avatar {
+ width: 55px;
+ height: 55px;
+}
+
+.contact-avatar img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ border-radius: 50%;
+}
+.contact-name {
+ margin-left: 15px;
 }
