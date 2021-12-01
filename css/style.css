@@ -118,7 +118,8 @@ input {
 }
 
 .contacts {
- height: calc(100% - 165px);
+ height: 300px;
+ overflow-y: scroll;
 }
 
 .contacts li {
@@ -187,6 +188,7 @@ input {
  height: calc(100% - 120px);
  background-image: url("../img/mine.jpg");
  padding: 50px;
+ overflow-y: scroll;
 }
 .messaggio {
  display: flex;
