@@ -59,12 +59,14 @@
         <div class=" col-right">
             <div class="user">
                 <div class="right-side">
-                    <img class="user-1" src="img/avatar_1.jpg" alt="">
+
+                    <div class="contact-avatar">
+                        <img :src="`img/avatar${contacts[indexCurrentContact].avatar}.jpg`"
+                            :alt="contacts[indexCurrentContact].name.name">
+                    </div>
 
                     <div class="ultimo-accesso">
-                        <p>Rob</p>
-                        <p>Ultimo accesso oggi alle</p>
-
+                        {{contacts[indexCurrentContact].name}}
                     </div>
                 </div>
 
@@ -74,24 +76,37 @@
                     <i class="fas fa-ellipsis-v"></i>
                 </div>
             </div>
-            <div class="messages-container">
+            <div class="messaggio-container">
 
+                <div class="messaggio" v-for="(message, index) in contacts[indexCurrentContact].messages"
+                    :class="message.status" :key="index">
+                    <div class="messaggio-text">
+                        {{message.message}}
+                        <div class="messaggio-date">{{message.date}}</div>
+
+                    </div>
+                </div>
             </div>
-            <div class="send-message">
+            <!-- /CONTENTIORE DEI MESSAGGI -->
+
+            <!-- INPUT DI MESSAGGIO -->
+            <div class="send-messaggio">
                 <div class="emoji">
                     <i class="far fa-smile"></i>
                 </div>
-                <div class="input-send-message">
+                <div class="input-send-messaggio">
                     <input type="text" placeholder="Scrivi un messaggio">
                 </div>
                 <div class="record">
                     <i class="fas fa-microphone"></i>
                 </div>
             </div>
+            <!-- /INPUT DI MESSAGGIO -->
 
         </div>
 
     </div>
+
 
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
