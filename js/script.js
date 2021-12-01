@@ -87,11 +87,28 @@ const app = new Vue({
    },
   ],
   indexCurrentContact: 0,
+  newMessage: "",
  },
  methods: {
   chanceContact(index) {
    this.indexCurrentContact = index;
-   this.resetMessageInfo();
+  },
+  sendMessage() {
+   this.contacts[this.indexCurrentContact].messages.push({
+    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+    message: this.newMessage,
+    status: "sent",
+   });
+
+   // PULISCO L'INPUT
+   this.newMessage = "";
+   setTimeout(() => {
+    this.contacts[this.indexCurrentContact].messages.push({
+     date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+     message: "ok",
+     status: "received",
+    });
+   }, 1000);
   },
  },
 });
