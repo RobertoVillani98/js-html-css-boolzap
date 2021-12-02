@@ -39,11 +39,13 @@
             </div>
             <div class="search-contact">
                 <i class="fas fa-search"></i>
-                <input type="text" placeholder="Cerca o inizia una nuova">
+                <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchText"
+                    @keyup="filterContact()">
             </div>
             <ul class="contacts">
                 <li v-for="(contact, index) in contacts" :key="index"
-                    :class="index == indexCurrentContact ? 'active' : null" @click="chanceContact(index)">
+                    :class="index == indexCurrentContact ? 'active' : null" @click="changeContact(index)"
+                    v-if="contact.visible">
                     <div class="contact-avatar">
                         <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                     </div>
@@ -112,8 +114,9 @@
 
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="js/script.js"></script>
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="js/script.js"></script>
+
 
 </body>
 

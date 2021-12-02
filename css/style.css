@@ -120,6 +120,7 @@ input {
 .contacts {
  height: 300px;
  overflow-y: scroll;
+ cursor: pointer;
 }
 
 .contacts li {

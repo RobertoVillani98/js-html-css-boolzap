@@ -88,11 +88,23 @@ const app = new Vue({
   ],
   indexCurrentContact: 0,
   newMessage: "",
+  searchText: "",
  },
  methods: {
-  chanceContact(index) {
+  changeContact(index) {
    this.indexCurrentContact = index;
   },
+
+  filterContact() {
+   this.contacts.forEach((element) => {
+    if (element.name.toLowerCase().includes(this.searchText.toLowerCase())) {
+     element.visible = true;
+    } else {
+     element.visible = false;
+    }
+   });
+  },
+
   sendMessage() {
    this.contacts[this.indexCurrentContact].messages.push({
     date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
@@ -100,8 +112,8 @@ const app = new Vue({
     status: "sent",
    });
 
-   // PULISCO L'INPUT
    this.newMessage = "";
+
    setTimeout(() => {
     this.contacts[this.indexCurrentContact].messages.push({
      date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
